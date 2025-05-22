@@ -38,7 +38,8 @@ MobaXterm,WireShark,open-wrt
 执行命令："opkg update" "opkg install rpcapd"，若已安装忽略此操作
 5.执行命令"rpcapd -4 -n -d",运行rpcapd；
 6.打开wireshark，做如下配置：
-![image](https://github.com/user-attachments/assets/71762a23-2d72-41d1-87f9-9669fa365c78)
+![image](https://github.com/user-attachments/assets/7e757ae1-e1d5-420b-b699-dc85b3dcbeca)
+
 
 ![image](https://github.com/user-attachments/assets/3dffb9e6-05be-4bd0-9e32-63995ec371d2)
 

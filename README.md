@@ -40,7 +40,7 @@ MobaXterm,WireShark,open-wrt
 6.打开wireshark，做如下配置：
 ![image](https://github.com/user-attachments/assets/71762a23-2d72-41d1-87f9-9669fa365c78)
 
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/3dffb9e6-05be-4bd0-9e32-63995ec371d2)
 
 主机：即open-wrt的ip
 

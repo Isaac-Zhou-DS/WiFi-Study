@@ -87,3 +87,5 @@ uci set wireless.radio0.mode="monitor" 修改mode为monitor
 uci commit wireless
 
 wifi---使配置生效
+### 参考链接
+https://blog.csdn.net/wu1013251335/article/details/141393094

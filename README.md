@@ -23,21 +23,30 @@ MobaXterm,WireShark,open-wrt
 4.在windows cmd界面输入命令"ssh root@192.168.5.1 "tcpdump -i mon0 -w - " > D:\capture.pcap"  该命令在pc cmd界面操作，可保存到pc某个具体文件夹中，此方式适合需要长期抓取报文时使用，注意下发命令后需要在cmd界面输入root的password，这里需要解决此问题；
 
   也可执行命令"ssh root@192.168.5.1 "tcpdump -i mon0 -w - " | wireshark -k -i -"   该命令在pc cmd界面操作，直接在wireshark实时显示抓取的报文，注意下发命令后需要在cmd界面输入root的password，这里需要解决此问题；
-####方案2
+#### 方案2
 (1)使用MobaXterm通过SSH登录open-wrt root界面：用户名：192.168.5.1 password：password
 
 (2)进入root界面后，按如下命令操作
 
 1.执行命令"ifconfig"查看网卡配置,并找到open-wrt所对应的无线网卡，例如：phy0-mon0 
 
-2.执行命令"iw phy phy0 interface add mon0 type monitor"将无线网卡功能定义为monnitor，网卡名mon0；
+2.执行命令"iw phy phy0 interface add mon0 type monitor"将无线网卡功能定义为monnitor，网卡名mon0，注意之前已经创建过了，可以不执行此命令；
 ：
 3.执行命令"ifconfig mon0 up"enable 无线网卡mon0
 
 4.安装rpcapd 
 执行命令："opkg update" "opkg install rpcapd"，若已安装忽略此操作
 5.执行命令"rpcapd -4 -n -d",运行rpcapd；
+6.打开wireshark，做如下配置：
+![image](https://github.com/user-attachments/assets/71762a23-2d72-41d1-87f9-9669fa365c78)
 
+![Uploading image.png…]()
+
+主机：即open-wrt的ip
+
+端口：默认2002
+
+选择密码认证，用户命：root 密码：open-wrt的密码
 ### 3.修改open-wrt wireless参数
 修改wireless参数：如channel，ssid，
 uci show wireless
